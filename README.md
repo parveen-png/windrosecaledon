@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Windrose at Caledon Trails
 
-## Getting Started
+Independent Next.js landing page for **Windrose at Caledon Trails** at `https://windrosecaledontrails.ca/`.
 
-First, run the development server:
+This is not the official builder website. Official Caledon Trails facts come from [caledontrails.ca](https://caledontrails.ca/). Windrose-specific prices, floor plans, deposits, incentives, launch dates and occupancy are marked **to be announced** until official documents exist.
+
+## Run locally
 
 ```bash
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Launch blockers
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Do not advertise this site until these are replaced with real values in `.env.local`:
 
-## Learn More
+- `NEXT_PUBLIC_LEGAL_PUBLISHER`
+- `NEXT_PUBLIC_REGISTRANT_NAME` (if an Ontario registrant is advertising)
+- `NEXT_PUBLIC_PUBLIC_PHONE` and/or `NEXT_PUBLIC_PUBLIC_EMAIL`
+- `NEXT_PUBLIC_BUSINESS_ADDRESS`
+- A lead destination: `LEAD_WEBHOOK_URL` and/or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL`
 
-To learn more about Next.js, take a look at the following resources:
+Have compliance and Canadian legal/privacy counsel review copy, consent language and the independent-site disclaimer before launch.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Lead routing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Registrations POST to `/api/leads`. Valid leads are:
 
-## Deploy on Vercel
+1. Appended to `data/leads.jsonl`
+2. Posted to `LEAD_WEBHOOK_URL` when set
+3. Emailed via Resend when `RESEND_API_KEY` is set
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The visitor is told the registration was received only after the server saves the lead. Analytics `generate_lead` fires only after that success response. Personal information is never sent to analytics.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Stack
+
+- Next.js App Router, TypeScript, Tailwind CSS
+- Server-rendered copy for SEO/AEO
+- JSON-LD, sitemap, robots, Open Graph
+- Accessible registration form with honeypot and rate limiting
+
+## Search Console
+
+After DNS is live, verify:
+
+- [Google Search Console](https://search.google.com/search-console)
+- [Bing Webmaster Tools](https://www.bing.com/webmasters)

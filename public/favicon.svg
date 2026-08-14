@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Windrose at Caledon Trails">
+  <rect width="64" height="64" rx="8" fill="#2C4A3E"/>
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#F4EFE6" stroke-width="1.5"/>
+  <path d="M32 10 L36 32 L32 54 L28 32 Z" fill="#F4EFE6"/>
+  <path d="M10 32 L32 28 L54 32 L32 36 Z" fill="#9D7D45"/>
+  <circle cx="32" cy="32" r="3" fill="#1C1A16"/>
+</svg>
