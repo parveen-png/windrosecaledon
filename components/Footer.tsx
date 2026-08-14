@@ -3,48 +3,48 @@ import { disclaimer } from "@/lib/site";
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-sand bg-ink pb-24 text-cream md:pb-10">
-      <div className="section-shell grid gap-10 py-14 md:grid-cols-2">
+    <footer className="bg-ink pb-24 text-cream md:pb-10">
+      <div className="section-shell grid gap-12 py-16 md:grid-cols-2 lg:py-20">
         <div>
-          <p className="font-display text-2xl text-paper">
+          <p className="font-display text-3xl font-light text-paper">
             Windrose at Caledon Trails
           </p>
-          <p className="mt-3 max-w-md text-sm leading-6 text-sand">
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-sand/80">
             Independent project information and registration. Not the official
             website of Laurier Homes, Yorkwood Homes or Caledon Trails.
           </p>
         </div>
         <div>
-          <h2 className="text-sm font-semibold tracking-wide text-paper uppercase">
-            Site
+          <h2 className="text-sm font-medium tracking-widest text-paper uppercase">
+            Site Links
           </h2>
-          <ul className="mt-3 space-y-2 text-sm">
+          <ul className="mt-6 space-y-3 text-sm tracking-wide text-sand/80">
             <li>
-              <a className="underline underline-offset-2" href="/privacy-policy">
+              <a className="transition-colors hover:text-white" href="/privacy-policy">
                 Privacy policy
               </a>
             </li>
             <li>
-              <a className="underline underline-offset-2" href="/terms">
+              <a className="transition-colors hover:text-white" href="/terms">
                 Terms and disclaimer
               </a>
             </li>
             <li>
-              <a className="underline underline-offset-2" href="#faq">
+              <a className="transition-colors hover:text-white" href="#faq">
                 FAQ
               </a>
             </li>
             <li>
-              <a className="underline underline-offset-2" href="#register">
+              <a className="transition-colors hover:text-white" href="#register">
                 Register
               </a>
             </li>
           </ul>
         </div>
       </div>
-      <div className="section-shell border-t border-white/10 py-8 text-sm leading-7 text-sand">
+      <div className="section-shell border-t border-white/10 py-8 text-xs leading-relaxed tracking-wide text-sand/60">
         <p>{disclaimer}</p>
-        <p className="mt-4">© {year} Windrose at Caledon Trails.</p>
+        <p className="mt-6">© {year} Windrose at Caledon Trails.</p>
       </div>
     </footer>
   );

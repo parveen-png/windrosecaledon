@@ -12,7 +12,7 @@ import {
 export function Hero() {
   return (
     <section
-      className="relative isolate flex min-h-[32rem] items-center overflow-hidden md:min-h-[38rem] lg:min-h-[min(42rem,calc(100dvh-4.5rem))]"
+      className="relative isolate flex min-h-[36rem] items-center overflow-hidden md:min-h-[42rem] lg:min-h-[min(48rem,calc(100dvh-5.5rem))]"
       aria-labelledby="hero-heading"
     >
       <div className="absolute inset-0 -z-10">
@@ -26,31 +26,33 @@ export function Hero() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,16,24,0.72)_0%,rgba(10,16,24,0.42)_48%,rgba(10,16,24,0.18)_100%)]" />
       </div>
-      <div className="section-shell grid w-full items-center gap-8 py-12 md:grid-cols-[minmax(0,1fr)_minmax(19rem,23rem)] md:py-16 lg:gap-12">
+      <div className="section-shell grid w-full items-center gap-10 py-16 md:grid-cols-[minmax(0,1fr)_minmax(22rem,26rem)] md:py-20 lg:gap-16">
         <div className="text-paper">
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-sand">
+          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-sand">
             Freehold Towns, Semis &amp; Singles
           </p>
           <h1
             id="hero-heading"
-            className="mt-3 font-display text-4xl leading-[1.1] md:text-[3.25rem]"
+            className="mt-4 font-display text-5xl font-light leading-[1.1] md:text-[4rem]"
           >
             Windrose at Caledon Trails
           </h1>
-          <p className="mt-4 font-display text-2xl tracking-tight text-cream">
+          <p className="mt-6 font-display text-2xl font-light tracking-tight text-cream md:text-3xl">
             Starting from the high $600s*
           </p>
-          <p className="mt-4 max-w-lg text-base leading-7 text-cream md:text-lg">
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-cream md:text-xl">
             New freehold homes at Mayfield Drive and McLaughlin Road, Caledon.
           </p>
-          <p className="mt-5 max-w-lg text-xs leading-5 text-sand">
+          <p className="mt-8 max-w-lg text-xs leading-relaxed text-sand/80">
             *Prices are subject to change without notice. Artist’s concept.
             Independent informational website — not the official website of the
             builders or the project.
           </p>
         </div>
-        <div id="register" className="scroll-mt-28">
-          <RegisterForm id="hero-register-form" />
+        <div id="register" className="scroll-mt-32">
+          <div className="bg-white p-6 shadow-2xl shadow-black/10 md:p-10">
+            <RegisterForm id="hero-register-form" />
+          </div>
         </div>
       </div>
     </section>
@@ -59,17 +61,17 @@ export function Hero() {
 
 export function DirectAnswer() {
   return (
-    <section id="overview" className="bg-paper py-16 md:py-20">
-      <div className="section-shell max-w-4xl">
-        <h2 className="font-display text-3xl md:text-4xl">
+    <section id="overview" className="bg-paper py-24 md:py-32">
+      <div className="section-shell max-w-4xl text-center">
+        <h2 className="font-display text-4xl font-light md:text-5xl">
           What is Windrose at Caledon Trails?
         </h2>
-        <p id="direct-answer" className="mt-5 max-w-3xl text-lg leading-8 text-ink-soft">
+        <p id="direct-answer" className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-ink-soft md:text-2xl">
           {introAnswer}
         </p>
-        <p className="mt-4 text-sm text-ink-soft">
+        <p className="mt-8 text-sm tracking-wide text-ink-soft">
           Source:{" "}
-          <a className="underline underline-offset-2" href={sources.caledonTrails.href}>
+          <a className="text-forest underline underline-offset-4 hover:text-forest-deep" href={sources.caledonTrails.href}>
             {sources.caledonTrails.label}
           </a>
           . Last verified: {LAST_VERIFIED}.
@@ -81,15 +83,15 @@ export function DirectAnswer() {
 
 export function Snapshot() {
   return (
-    <section className="bg-cream py-16 md:py-20">
+    <section className="bg-cream py-24 md:py-32">
       <div className="section-shell max-w-4xl">
-        <h2 className="font-display text-3xl md:text-4xl">Verified project snapshot</h2>
-        <p className="mt-4 max-w-2xl text-ink-soft">
+        <h2 className="font-display text-4xl font-light md:text-5xl">Verified project snapshot</h2>
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
           Snapshot facts below reflect campaign information for Windrose together
           with sourced community and builder details. Prices and specifications
           can change without notice.
         </p>
-        <div id="project-snapshot" className="mt-8 overflow-hidden rounded-sm border border-sand bg-paper px-5 md:px-8">
+        <div id="project-snapshot" className="mt-12 overflow-hidden bg-white px-6 py-8 shadow-2xl shadow-ink/5 md:px-12 md:py-10">
           <table className="snapshot-table">
             <caption className="sr-only">
               Windrose at Caledon Trails verified project facts as of {LAST_VERIFIED}
@@ -104,9 +106,9 @@ export function Snapshot() {
             </tbody>
           </table>
         </div>
-        <p className="mt-4 text-sm text-ink-soft">
+        <p className="mt-6 text-sm tracking-wide text-ink-soft">
           Last verified: {LAST_VERIFIED}. Primary source:{" "}
-          <a className="underline underline-offset-2" href={sources.caledonTrails.href}>
+          <a className="text-forest underline underline-offset-4 hover:text-forest-deep" href={sources.caledonTrails.href}>
             caledontrails.ca
           </a>
           .
@@ -124,31 +126,31 @@ export function WhyRegister() {
     "Builder incentive or change notices, if published",
   ];
   return (
-    <section className="bg-paper py-16 md:py-20">
-      <div className="section-shell grid gap-10 md:grid-cols-2 md:items-center">
+    <section className="bg-paper py-24 md:py-32">
+      <div className="section-shell grid gap-16 md:grid-cols-2 lg:gap-20 md:items-center">
         <div>
-          <h2 className="font-display text-3xl md:text-4xl">
+          <h2 className="font-display text-4xl font-light md:text-5xl">
             Why register on this page
           </h2>
-          <p className="mt-4 text-lg leading-8 text-ink-soft">
+          <p className="mt-8 text-lg leading-relaxed text-ink-soft">
             Official Windrose documents are not available to send today. The
             form is for useful updates, not a wall in front of the page. You
             keep reading everything below whether or not you register.
           </p>
-          <ul className="mt-6 space-y-3">
+          <ul className="mt-8 space-y-4">
             {items.map((item) => (
-              <li key={item} className="flex gap-3 text-ink">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                <span>{item}</span>
+              <li key={item} className="flex gap-4 text-ink">
+                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                <span className="leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-sm text-ink-soft">
+          <p className="mt-8 text-sm tracking-wide text-ink-soft">
             We will not claim instant access, VIP status or builder authorization.
             If a document cannot be delivered, we will not tell you that it was sent.
           </p>
         </div>
-        <figure className="relative aspect-[4/3] overflow-hidden rounded-sm">
+        <figure className="relative aspect-[4/3] overflow-hidden bg-cream shadow-2xl shadow-ink/10">
           <Image
             src="/images/hero-windrose-streetscape.jpg"
             alt="Artist’s concept of homes at Windrose at Caledon Trails."
@@ -156,7 +158,7 @@ export function WhyRegister() {
             sizes="(max-width: 768px) 100vw, 36rem"
             className="object-cover"
           />
-          <figcaption className="absolute inset-x-0 bottom-0 bg-ink/70 px-4 py-2 text-xs text-cream">
+          <figcaption className="absolute inset-x-0 bottom-0 bg-ink/80 px-6 py-3 text-xs tracking-wide text-cream backdrop-blur-sm">
             Artist’s concept. Homes may not be exactly as shown.
           </figcaption>
         </figure>
@@ -167,18 +169,18 @@ export function WhyRegister() {
 
 export function HomeTypes() {
   return (
-    <section id="homes" className="bg-cream py-16 md:py-20">
+    <section id="homes" className="bg-cream py-24 md:py-32">
       <div className="section-shell">
-        <h2 className="font-display text-3xl md:text-4xl">
+        <h2 className="text-center font-display text-4xl font-light md:text-5xl">
           Freehold towns, semis and singles
         </h2>
-        <p className="mt-4 max-w-3xl text-lg leading-8 text-ink-soft">
+        <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-relaxed text-ink-soft">
           Windrose is presented as a mix of freehold townhomes, semi-detached
           homes and detached singles in Caledon. Floor-plan names, sizes,
           bedrooms and parking are still to be announced in official builder
           documents.
         </p>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
           {[
             {
               title: "Towns",
@@ -193,12 +195,12 @@ export function HomeTypes() {
               body: "Detached singles for buyers comparing a full freehold house in the Caledon Trails community. Lot widths and elevations are to be announced.",
             },
           ].map((card) => (
-            <article key={card.title} className="rounded-sm border border-sand bg-paper p-6">
-              <h3 className="font-display text-2xl">{card.title}</h3>
-              <p className="mt-3 leading-7 text-ink-soft">{card.body}</p>
-              <p className="mt-5 text-sm font-medium text-forest">
+            <article key={card.title} className="bg-white p-8 shadow-xl shadow-ink/5 md:p-10">
+              <h3 className="font-display text-3xl font-light">{card.title}</h3>
+              <p className="mt-4 leading-relaxed text-ink-soft">{card.body}</p>
+              <p className="mt-8 text-sm font-medium tracking-wide text-forest">
                 Request plans when released.{" "}
-                <a className="underline underline-offset-2" href="#register">
+                <a className="underline underline-offset-4 hover:text-forest-deep" href="#register">
                   Get Project Updates
                 </a>
               </p>
@@ -212,25 +214,25 @@ export function HomeTypes() {
 
 export function Pricing() {
   return (
-    <section className="bg-forest-deep py-16 text-cream md:py-20">
-      <div className="section-shell max-w-4xl">
-        <h2 className="font-display text-3xl text-paper md:text-4xl">
+    <section className="bg-forest-deep py-24 text-cream md:py-32">
+      <div className="section-shell max-w-4xl text-center">
+        <h2 className="font-display text-4xl font-light text-paper md:text-5xl">
           Windrose pricing and incentives
         </h2>
-        <p className="mt-5 text-lg leading-8">
+        <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed md:text-2xl">
           Homes are presented from the high $600s. That starting range can change
           without notice and is not a guaranteed purchase price. A current price
           list, deposit schedule and incentive sheet should be confirmed in
           official builder documents.
         </p>
-        <p className="mt-4 leading-8">
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cream/80">
           Builder pricing and availability can change without notice. A purchase
           can be made only through the builders’ official documents and an
           Agreement of Purchase and Sale.
         </p>
         <a
           href="#register"
-          className="mt-8 inline-flex min-h-12 items-center rounded-sm bg-paper px-6 font-semibold text-forest hover:bg-cream"
+          className="mt-12 inline-flex min-h-14 items-center justify-center bg-paper px-10 text-sm font-medium tracking-widest uppercase text-forest transition-colors hover:bg-cream"
         >
           Get Project Updates
         </a>
@@ -243,65 +245,67 @@ export function Location() {
   const mapSrc =
     "https://www.openstreetmap.org/export/embed.html?bbox=-79.90%2C43.73%2C-79.82%2C43.79&layer=mapnik&marker=43.761%2C-79.860";
   return (
-    <section id="location" className="bg-paper py-16 md:py-20">
-      <div className="section-shell grid gap-10 lg:grid-cols-2">
+    <section id="location" className="bg-paper py-24 md:py-32">
+      <div className="section-shell grid gap-16 lg:grid-cols-2 lg:gap-20">
         <div>
-          <h2 className="font-display text-3xl md:text-4xl">
+          <h2 className="font-display text-4xl font-light md:text-5xl">
             Location and lifestyle
           </h2>
-          <p className="mt-5 text-lg leading-8 text-ink-soft">
-            Caledon Trails is presented at the intersection of Mayfield Drive
-            and McLaughlin Road in the Town of Caledon. Mayfield Road is the
-            municipal edge with Brampton, and the Town of Caledon’s Mayfield
-            West secondary plan describes this part of Caledon as a growing
-            mixed-use community with parks, school sites, trails and local
-            services.
-          </p>
-          <p className="mt-4 leading-8 text-ink-soft">
-            The official community website notes shops, restaurants and transit
-            access, together with parks, trails and conservation lands. Named
-            nearby destinations include the Cheltenham Badlands, Forks of the
-            Credit Provincial Park and Belfountain Conservation Area. School
-            boundaries and admission are not stated here; buyers should confirm
-            current catchments with the relevant school boards.
-          </p>
-          <p className="mt-4 leading-8 text-ink-soft">
-            Highway 410 is identified in Town of Caledon planning materials as
-            the eastern reference for Mayfield West Phase 2 Stage 2. Travel
-            times to GO stations, Pearson Airport or employment centres are not
-            listed because they were not independently timed for this page.
-          </p>
-          <ul className="mt-6 space-y-2 text-sm text-ink-soft">
+          <div className="prose-calm mt-8 space-y-6 text-lg leading-relaxed">
+            <p>
+              Caledon Trails is presented at the intersection of Mayfield Drive
+              and McLaughlin Road in the Town of Caledon. Mayfield Road is the
+              municipal edge with Brampton, and the Town of Caledon’s Mayfield
+              West secondary plan describes this part of Caledon as a growing
+              mixed-use community with parks, school sites, trails and local
+              services.
+            </p>
+            <p>
+              The official community website notes shops, restaurants and transit
+              access, together with parks, trails and conservation lands. Named
+              nearby destinations include the Cheltenham Badlands, Forks of the
+              Credit Provincial Park and Belfountain Conservation Area. School
+              boundaries and admission are not stated here; buyers should confirm
+              current catchments with the relevant school boards.
+            </p>
+            <p>
+              Highway 410 is identified in Town of Caledon planning materials as
+              the eastern reference for Mayfield West Phase 2 Stage 2. Travel
+              times to GO stations, Pearson Airport or employment centres are not
+              listed because they were not independently timed for this page.
+            </p>
+          </div>
+          <ul className="mt-8 space-y-3 text-sm tracking-wide text-ink-soft">
             <li>
               Community location source:{" "}
-              <a className="underline" href={sources.caledonTrails.href}>
+              <a className="text-forest underline underline-offset-4 hover:text-forest-deep" href={sources.caledonTrails.href}>
                 caledontrails.ca
               </a>
             </li>
             <li>
               Planning context:{" "}
-              <a className="underline" href={sources.caledon.href}>
+              <a className="text-forest underline underline-offset-4 hover:text-forest-deep" href={sources.caledon.href}>
                 Town of Caledon
               </a>
             </li>
             <li>
               Parks:{" "}
-              <a className="underline" href={sources.forks.href}>
+              <a className="text-forest underline underline-offset-4 hover:text-forest-deep" href={sources.forks.href}>
                 Ontario Parks
               </a>
               ,{" "}
-              <a className="underline" href={sources.belfountain.href}>
+              <a className="text-forest underline underline-offset-4 hover:text-forest-deep" href={sources.belfountain.href}>
                 Credit Valley Conservation
               </a>
               ,{" "}
-              <a className="underline" href={sources.badlands.href}>
+              <a className="text-forest underline underline-offset-4 hover:text-forest-deep" href={sources.badlands.href}>
                 Ontario Heritage Trust
               </a>
             </li>
           </ul>
         </div>
-        <div className="space-y-4">
-          <figure className="relative aspect-[4/3] overflow-hidden rounded-sm">
+        <div className="space-y-6">
+          <figure className="relative aspect-[4/3] overflow-hidden bg-cream shadow-2xl shadow-ink/10">
             <Image
               src="/images/caledon-nature-trail.jpg"
               alt="Conceptual southern Ontario forest trail. Not a photograph of the Windrose site."
@@ -309,22 +313,22 @@ export function Location() {
               sizes="(max-width: 1024px) 100vw, 36rem"
               className="object-cover"
             />
-            <figcaption className="absolute inset-x-0 bottom-0 bg-ink/70 px-4 py-2 text-xs text-cream">
+            <figcaption className="absolute inset-x-0 bottom-0 bg-ink/80 px-6 py-3 text-xs tracking-wide text-cream backdrop-blur-sm">
               Conceptual landscape imagery — not the project site.
             </figcaption>
           </figure>
-          <div className="overflow-hidden rounded-sm border border-sand">
+          <div className="overflow-hidden bg-white shadow-xl shadow-ink/5">
             <iframe
               title="Map of Mayfield Drive and McLaughlin Road, Caledon"
               src={mapSrc}
-              className="h-64 w-full border-0"
+              className="h-[20rem] w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer"
             />
-            <p className="bg-cream px-4 py-3 text-sm text-ink-soft">
+            <p className="bg-cream px-6 py-4 text-sm tracking-wide text-ink-soft">
               Approximate community intersection.{" "}
               <a
-                className="underline"
+                className="text-forest underline underline-offset-4 hover:text-forest-deep"
                 href="https://www.openstreetmap.org/?mlat=43.761&mlon=-79.860#map=14/43.761/-79.860"
               >
                 Open a larger map

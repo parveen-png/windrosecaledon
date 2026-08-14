@@ -144,11 +144,11 @@ export function RegisterForm({ id = "register-form" }: { id?: string }) {
       <div
         id={`${id}-success`}
         tabIndex={-1}
-        className="rounded-sm border border-sand bg-paper p-5"
+        className="p-2"
         role="status"
       >
-        <p className="font-display text-xl text-ink">Registration received</p>
-        <p className="mt-2 text-sm leading-6 text-ink-soft">
+        <p className="font-display text-3xl font-light text-ink">Registration received</p>
+        <p className="mt-4 text-lg leading-relaxed text-ink-soft">
           Thank you—your registration has been received. We’ll send verified
           Windrose at Caledon Trails updates as project information becomes
           available.
@@ -164,13 +164,13 @@ export function RegisterForm({ id = "register-form" }: { id?: string }) {
       onSubmit={onSubmit}
       onFocus={markStart}
       aria-labelledby={headingId}
-      className="rounded-sm border border-sand bg-paper p-4 shadow-[0_12px_40px_rgba(28,26,22,0.08)]"
+      className=""
     >
-      <p id={headingId} className="font-display text-xl text-ink">
+      <p id={headingId} className="font-display text-3xl font-light text-ink">
         Get Project Updates
       </p>
 
-      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+      <div className="mt-8 grid gap-6 sm:grid-cols-2">
         <Field
           idPrefix={id}
           label="First name"
@@ -217,19 +217,19 @@ export function RegisterForm({ id = "register-form" }: { id?: string }) {
         />
       </div>
 
-      <fieldset className="mt-3">
-        <legend className="text-sm font-semibold text-ink">
+      <fieldset className="mt-6">
+        <legend className="text-sm font-medium tracking-wide text-ink-soft uppercase">
           Are you a broker?
         </legend>
-        <div className="mt-2 flex gap-4">
+        <div className="mt-3 flex gap-6">
           {brokerOptions.map((option) => (
-            <label key={option} className="flex min-h-10 items-center gap-2 text-sm text-ink">
+            <label key={option} className="flex min-h-10 cursor-pointer items-center gap-3 text-base text-ink">
               <input
                 type="radio"
                 name={`${id}-isBroker`}
                 value={option}
                 checked={values.isBroker === option}
-                className="h-4 w-4 accent-forest"
+                className="h-5 w-5 accent-forest"
                 onChange={() => setValues((v) => ({ ...v, isBroker: option }))}
               />
               {option}
@@ -237,7 +237,7 @@ export function RegisterForm({ id = "register-form" }: { id?: string }) {
           ))}
         </div>
         {errors.isBroker ? (
-          <p className="mt-1 text-sm text-error" role="alert">
+          <p className="mt-2 text-sm text-error" role="alert">
             {errors.isBroker}
           </p>
         ) : null}
@@ -257,34 +257,34 @@ export function RegisterForm({ id = "register-form" }: { id?: string }) {
         />
       </div>
 
-      <div className="mt-3 flex gap-2">
+      <div className="mt-6 flex gap-3">
         <input
           id={`${id}-consent`}
           name="consent"
           type="checkbox"
           checked={values.consent}
           aria-invalid={Boolean(errors.consent)}
-          className="mt-0.5 h-4 w-4 shrink-0 accent-forest"
+          className="mt-1 h-5 w-5 shrink-0 accent-forest"
           onChange={(event) =>
             setValues((v) => ({ ...v, consent: event.target.checked }))
           }
         />
-        <label htmlFor={`${id}-consent`} className="text-xs leading-5 text-ink-soft">
+        <label htmlFor={`${id}-consent`} className="text-sm leading-relaxed text-ink-soft">
           {consentText}{" "}
-          <a className="text-forest underline underline-offset-2" href="/privacy-policy">
+          <a className="text-forest underline underline-offset-4 hover:text-forest-deep" href="/privacy-policy">
             Privacy policy
           </a>
           .
         </label>
       </div>
       {errors.consent ? (
-        <p className="mt-1 text-sm text-error" role="alert">
+        <p className="mt-2 text-sm text-error" role="alert">
           {errors.consent}
         </p>
       ) : null}
 
       {status.type === "error" ? (
-        <p className="mt-2 text-sm text-error" role="alert">
+        <p className="mt-4 text-sm text-error" role="alert">
           {status.message}
         </p>
       ) : null}
@@ -292,7 +292,7 @@ export function RegisterForm({ id = "register-form" }: { id?: string }) {
       <button
         type="submit"
         disabled={status.type === "submitting"}
-        className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-sm bg-forest px-5 text-sm font-semibold tracking-wide text-paper transition-colors hover:bg-forest-deep disabled:cursor-wait disabled:opacity-70"
+        className="mt-8 inline-flex min-h-14 w-full items-center justify-center bg-forest px-6 text-sm font-medium tracking-widest uppercase text-paper transition-colors hover:bg-forest-deep disabled:cursor-wait disabled:opacity-70"
       >
         {status.type === "submitting" ? "Sending…" : "Get Project Updates"}
       </button>
@@ -327,7 +327,7 @@ function Field({
 
   return (
     <div>
-      <label className="block text-sm font-semibold text-ink" htmlFor={fieldId}>
+      <label className="block text-sm font-medium tracking-wide text-ink-soft uppercase" htmlFor={fieldId}>
         {label}
       </label>
       <input
@@ -340,11 +340,11 @@ function Field({
         value={value}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${fieldId}-error` : undefined}
-        className="mt-1 min-h-10 w-full rounded-sm border border-sand bg-cream px-3 text-base text-ink"
+        className="mt-2 min-h-12 w-full border-b border-sand bg-transparent px-0 text-base text-ink focus:border-forest focus:outline-none transition-colors"
         onChange={(event) => onChange(event.target.value)}
       />
       {error ? (
-        <p id={`${fieldId}-error`} className="mt-1 text-sm text-error" role="alert">
+        <p id={`${fieldId}-error`} className="mt-2 text-sm text-error" role="alert">
           {error}
         </p>
       ) : null}
