@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { RegisterForm } from "@/components/RegisterForm";
-import { HeroCta } from "@/components/HeroCta";
 import {
   LAST_VERIFIED,
   disclaimer,
@@ -20,54 +19,28 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_70%]"
+          className="object-cover object-[center_62%]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,16,24,0.78)_0%,rgba(10,16,24,0.5)_46%,rgba(10,16,24,0.22)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,16,24,0.78)_0%,rgba(10,16,24,0.48)_50%,rgba(10,16,24,0.22)_100%)]" />
       </div>
-      <div className="section-shell grid items-start gap-8 py-16 md:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.95fr)] md:py-24">
+      <div className="section-shell grid items-center gap-6 py-8 md:grid-cols-[minmax(0,1fr)_minmax(18.5rem,22rem)] md:py-10 lg:gap-10">
         <div className="text-paper">
-          <p className="text-sm font-semibold tracking-[0.18em] uppercase text-sand">
+          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-sand">
             Freehold Towns, Semis &amp; Singles
           </p>
           <h1
             id="hero-heading"
-            className="mt-4 font-display text-4xl leading-[1.1] md:text-6xl"
+            className="mt-2 font-display text-3xl leading-[1.12] md:text-5xl"
           >
             Windrose at Caledon Trails
           </h1>
-          <p className="mt-5 font-display text-2xl tracking-tight text-cream md:text-3xl">
+          <p className="mt-3 font-display text-xl tracking-tight text-cream md:text-2xl">
             Starting from the high $600s*
           </p>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-cream">
-            New freehold homes in the Caledon Trails community at Mayfield Drive
-            and McLaughlin Road, Caledon. Laurier Homes and Yorkwood Homes are
-            the builders named on the official community website.
+          <p className="mt-3 max-w-lg text-base leading-7 text-cream">
+            New freehold homes at Mayfield Drive and McLaughlin Road, Caledon.
           </p>
-          <p className="mt-4 max-w-xl text-lg leading-8 text-cream">
-            Register for verified pricing, floor-plan and launch updates as
-            official documents are released.
-          </p>
-          <ul className="mt-8 grid gap-3 text-sm md:grid-cols-3">
-            {[
-              "Freehold towns, semis & singles",
-              "Mayfield Drive & McLaughlin Road, Caledon",
-              "From the high $600s*",
-            ].map((item) => (
-              <li
-                key={item}
-                className="border border-white/20 bg-white/10 px-4 py-3 leading-6"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 hidden md:block">
-            <HeroCta />
-          </div>
-          <p className="mt-5 text-sm text-sand">
-            Free project updates. No obligation.
-          </p>
-          <p className="mt-2 max-w-xl text-xs leading-5 text-sand">
+          <p className="mt-3 max-w-lg text-xs leading-5 text-sand">
             *Prices are subject to change without notice. Artist’s concept.
             Independent informational website — not the official website of the
             builders or the project.

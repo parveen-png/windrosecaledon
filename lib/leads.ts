@@ -20,8 +20,7 @@ export type StoredLead = {
   lastName: string;
   email: string;
   phone: string;
-  interestedIn: string;
-  buyerTiming: string;
+  isBroker: string;
   consent: true;
   pageUrl: string;
   referrer: string;
@@ -55,8 +54,7 @@ export function toStoredLead(input: LeadInput, ip: string): StoredLead {
     lastName: input.lastName,
     email: input.email.toLowerCase(),
     phone: input.phone,
-    interestedIn: input.interestedIn,
-    buyerTiming: input.buyerTiming,
+    isBroker: input.isBroker,
     consent: true,
     pageUrl: value(input.pageUrl),
     referrer: value(input.referrer),
@@ -200,9 +198,8 @@ export function internalCopy(lead: StoredLead) {
     "",
     `Name: ${lead.firstName} ${lead.lastName}`,
     `Email: ${lead.email}`,
-    `Phone: ${lead.phone || "Not provided"}`,
-    `Interested in: ${lead.interestedIn}`,
-    `Timing: ${lead.buyerTiming || "Not provided"}`,
+    `Phone: ${lead.phone}`,
+    `Broker: ${lead.isBroker}`,
     `Consent: yes (${lead.consentTextVersion}) at ${lead.submittedAt}`,
     `Timezone: ${lead.timezone || "Unknown"}`,
     `Page: ${lead.pageUrl || "https://windrosecaledontrails.ca/"}`,

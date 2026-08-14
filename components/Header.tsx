@@ -19,7 +19,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-sand bg-white">
-      <div className="section-shell flex min-h-[5.25rem] items-center justify-between gap-4 py-2">
+      <div className="section-shell flex min-h-16 items-center justify-between gap-4 py-2">
         <a href="#top" className="flex shrink-0 items-center" aria-label="Windrose at Caledon Trails">
           <SiteLogo />
         </a>

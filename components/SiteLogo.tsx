@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export function SiteLogo({
-  className = "h-[4.25rem] w-auto object-contain md:h-20",
+  className = "h-14 w-auto object-contain md:h-16",
 }: {
   className?: string;
 }) {

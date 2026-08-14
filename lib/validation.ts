@@ -1,26 +1,13 @@
 import { z } from "zod";
 
-export const interestOptions = [
-  "Townhome",
-  "Semi-detached",
-  "Detached home",
-  "Not sure",
-] as const;
+export const brokerOptions = ["Yes", "No"] as const;
 
-export const timingOptions = [
-  "0–3 months",
-  "3–6 months",
-  "6–12 months",
-  "Just researching",
-] as const;
-
-const optionalPhone = z
+const phone = z
   .string()
   .trim()
   .transform((value) => value.replace(/[^\d+()\-\s.]/g, ""))
   .refine(
-    (value) =>
-      value.length === 0 || value.replace(/\D/g, "").length >= 10,
+    (value) => value.replace(/\D/g, "").length >= 10,
     "Enter a 10-digit phone number, including area code.",
   );
 
@@ -38,11 +25,10 @@ export const leadSchema = z.object({
   email: z
     .email("Enter a valid email address.")
     .max(254, "Email address is too long."),
-  phone: optionalPhone,
-  interestedIn: z.enum(interestOptions, {
-    error: "Choose the home type you want updates about.",
+  phone,
+  isBroker: z.enum(brokerOptions, {
+    error: "Please choose yes or no.",
   }),
-  buyerTiming: z.union([z.enum(timingOptions), z.literal("")]),
   consent: z.literal(true, {
     error: "Please confirm consent to receive project updates.",
   }),

@@ -39,13 +39,12 @@ export default function PrivacyPolicyPage() {
             <h2 className="font-display text-2xl text-ink">What we collect and why</h2>
             <p>
               The registration form collects first name, last name, email address,
-              optional phone number, home-type interest, optional buyer timing,
-              marketing consent, the consent wording and version, the page URL,
-              page version, referrer, advertising click identifiers when present,
-              form version, and the time and timezone of submission. We use this
-              to send the project updates you requested, to prevent spam, and to
-              understand which campaigns brought a registration. We do not sell
-              personal information.
+              phone number, whether you are a broker, marketing consent, the consent
+              wording and version, the page URL, page version, referrer, advertising
+              click identifiers when present, form version, and the time and timezone
+              of submission. We use this to send the project updates you requested,
+              to prevent spam, and to understand which campaigns brought a
+              registration. We do not sell personal information.
             </p>
             <h2 className="font-display text-2xl text-ink">Consent</h2>
             <p>
