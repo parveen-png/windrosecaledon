@@ -11,7 +11,10 @@ import {
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden" aria-labelledby="hero-heading">
+    <section
+      className="relative isolate flex min-h-[32rem] items-center overflow-hidden md:min-h-[38rem] lg:min-h-[min(42rem,calc(100dvh-4.5rem))]"
+      aria-labelledby="hero-heading"
+    >
       <div className="absolute inset-0 -z-10">
         <Image
           src="/images/hero-windrose-streetscape.jpg"
@@ -19,28 +22,28 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_62%]"
+          className="object-cover object-[center_bottom]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,16,24,0.78)_0%,rgba(10,16,24,0.48)_50%,rgba(10,16,24,0.22)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,16,24,0.72)_0%,rgba(10,16,24,0.42)_48%,rgba(10,16,24,0.18)_100%)]" />
       </div>
-      <div className="section-shell grid items-center gap-6 py-8 md:grid-cols-[minmax(0,1fr)_minmax(18.5rem,22rem)] md:py-10 lg:gap-10">
+      <div className="section-shell grid w-full items-center gap-8 py-12 md:grid-cols-[minmax(0,1fr)_minmax(19rem,23rem)] md:py-16 lg:gap-12">
         <div className="text-paper">
-          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-sand">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-sand">
             Freehold Towns, Semis &amp; Singles
           </p>
           <h1
             id="hero-heading"
-            className="mt-2 font-display text-3xl leading-[1.12] md:text-5xl"
+            className="mt-3 font-display text-4xl leading-[1.1] md:text-[3.25rem]"
           >
             Windrose at Caledon Trails
           </h1>
-          <p className="mt-3 font-display text-xl tracking-tight text-cream md:text-2xl">
+          <p className="mt-4 font-display text-2xl tracking-tight text-cream">
             Starting from the high $600s*
           </p>
-          <p className="mt-3 max-w-lg text-base leading-7 text-cream">
+          <p className="mt-4 max-w-lg text-base leading-7 text-cream md:text-lg">
             New freehold homes at Mayfield Drive and McLaughlin Road, Caledon.
           </p>
-          <p className="mt-3 max-w-lg text-xs leading-5 text-sand">
+          <p className="mt-5 max-w-lg text-xs leading-5 text-sand">
             *Prices are subject to change without notice. Artist’s concept.
             Independent informational website — not the official website of the
             builders or the project.

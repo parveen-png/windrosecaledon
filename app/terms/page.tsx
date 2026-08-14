@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Header, MobileStickyCta } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { LAST_VERIFIED, disclaimer, publisher } from "@/lib/site";
+import { LAST_VERIFIED, disclaimer } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms and disclaimer",
@@ -23,26 +23,16 @@ export default function TermsPage() {
           <p className="mt-4 text-sm text-ink-soft">Last updated: {LAST_VERIFIED}.</p>
           <div className="prose-calm mt-10 space-y-6 text-[1.05rem] leading-8">
             <p>
-              This website is published by {publisher.legalName} as an independent
-              information and registration page. It is not affiliated with, or
+              This website is an independent information and registration page
+              for Windrose at Caledon Trails. It is not affiliated with, or
               authorized by, the builders unless a written authorization is later
               added to this page.
             </p>
             <p>{disclaimer}</p>
             <p>
-              Project facts are verified against official community, builder and
-              government sources and dated on the landing page. Unconfirmed
-              commercial details are marked to be announced. Conceptual photographs
-              are not official renderings.
-            </p>
-            <p>
-              If this page advertises real-estate services of an Ontario
-              registrant, the brokerage and registrant must be identified before
-              launch, as required by current RECO/TRESA advertising rules.
-            </p>
-            <p>
-              These terms are not legal advice. Have Canadian counsel review them
-              before the site is advertised to the public.
+              Project facts are dated on the landing page. Prices, incentives,
+              specifications and availability are subject to change without notice.
+              Renderings are artists’ concepts.
             </p>
           </div>
         </article>

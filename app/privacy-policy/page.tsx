@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Header, MobileStickyCta } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { LAST_VERIFIED, SITE_URL, publisher } from "@/lib/site";
+import { LAST_VERIFIED, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy policy",
@@ -32,9 +32,9 @@ export default function PrivacyPolicyPage() {
             </p>
             <h2 className="font-display text-2xl text-ink">Who publishes this site</h2>
             <p>
-              Publisher: {publisher.legalName}. Address: {publisher.address}.
-              Contact details must be completed before public launch. Until then,
-              treat missing identity fields as launch blockers.
+              This is an independent information and registration website for
+              Windrose at Caledon Trails. It is not the official website of the
+              builders or the project.
             </p>
             <h2 className="font-display text-2xl text-ink">What we collect and why</h2>
             <p>

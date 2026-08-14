@@ -6,7 +6,6 @@ import {
   faqs,
   introAnswer,
   metadataContent,
-  publisher,
   sources,
 } from "@/lib/site";
 
@@ -22,16 +21,10 @@ export function jsonLdGraph() {
       {
         "@type": "Organization",
         "@id": publisherId,
-        name: publisher.legalName,
+        name: PROJECT_NAME,
         url: SITE_URL,
-        ...(publisher.email && !publisher.email.includes("[")
-          ? { email: publisher.email }
-          : {}),
-        ...(publisher.phone && !publisher.phone.includes("[")
-          ? { telephone: publisher.phone }
-          : {}),
         description:
-          "Independent publisher of project information for Windrose at Caledon Trails. Not the official builder website.",
+          "Independent information website for Windrose at Caledon Trails. Not the official builder website.",
       },
       {
         "@type": "WebSite",
@@ -60,7 +53,7 @@ export function jsonLdGraph() {
           caption:
             "Artist’s concept of homes at Windrose at Caledon Trails. Homes may not be exactly as shown.",
           width: 1671,
-          height: 1119,
+          height: 895,
         },
         speakable: {
           "@type": "SpeakableSpecification",
