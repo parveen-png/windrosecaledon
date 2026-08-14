@@ -59,10 +59,10 @@ export const metadata: Metadata = {
     description: metadataContent.description,
     images: [
       {
-        url: "/images/og-caledon-landscape.jpg",
+        url: "/images/og-windrose-streetscape.jpg",
         width: 1200,
         height: 630,
-        alt: "Conceptual Caledon countryside landscape. Not an official project rendering.",
+        alt: "Artist’s concept of homes at Windrose at Caledon Trails.",
       },
     ],
   },
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: metadataContent.title,
     description: metadataContent.description,
-    images: ["/images/og-caledon-landscape.jpg"],
+    images: ["/images/og-windrose-streetscape.jpg"],
   },
   icons: {
     icon: "/favicon.svg",

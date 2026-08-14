@@ -15,19 +15,19 @@ export function Hero() {
     <section className="relative isolate overflow-hidden" aria-labelledby="hero-heading">
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/hero-caledon-landscape.jpg"
-          alt="Conceptual Caledon countryside landscape at golden hour. Not an official project rendering."
+          src="/images/hero-windrose-streetscape.jpg"
+          alt="Artist’s concept of freehold homes at Windrose at Caledon Trails in Caledon."
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[center_70%]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(28,26,22,0.72)_0%,rgba(28,26,22,0.42)_48%,rgba(28,26,22,0.28)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,16,24,0.78)_0%,rgba(10,16,24,0.5)_46%,rgba(10,16,24,0.22)_100%)]" />
       </div>
       <div className="section-shell grid items-start gap-8 py-16 md:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.95fr)] md:py-24">
         <div className="text-paper">
           <p className="text-sm font-semibold tracking-[0.18em] uppercase text-sand">
-            New homes in Caledon
+            Freehold Towns, Semis &amp; Singles
           </p>
           <h1
             id="hero-heading"
@@ -35,26 +35,27 @@ export function Hero() {
           >
             Windrose at Caledon Trails
           </h1>
+          <p className="mt-5 font-display text-2xl tracking-tight text-cream md:text-3xl">
+            Starting from the high $600s*
+          </p>
           <p className="mt-6 max-w-xl text-lg leading-8 text-cream">
-            An independent information page for a new-home opportunity connected
-            to the Caledon Trails community at Mayfield Drive and McLaughlin
-            Road. Laurier Homes and Yorkwood Homes are the builders named on the
-            official community website.
+            New freehold homes in the Caledon Trails community at Mayfield Drive
+            and McLaughlin Road, Caledon. Laurier Homes and Yorkwood Homes are
+            the builders named on the official community website.
           </p>
           <p className="mt-4 max-w-xl text-lg leading-8 text-cream">
-            Pricing, floor plans and launch timing for Windrose are still to be
-            announced. Register for verified updates when official documents are
-            released.
+            Register for verified pricing, floor-plan and launch updates as
+            official documents are released.
           </p>
           <ul className="mt-8 grid gap-3 text-sm md:grid-cols-3">
             {[
+              "Freehold towns, semis & singles",
               "Mayfield Drive & McLaughlin Road, Caledon",
-              "Broader community by Laurier Homes and Yorkwood Homes",
-              "Prices & floor plans: to be announced",
+              "From the high $600s*",
             ].map((item) => (
               <li
                 key={item}
-                className="border border-white/20 bg-white/8 px-4 py-3 leading-6"
+                className="border border-white/20 bg-white/10 px-4 py-3 leading-6"
               >
                 {item}
               </li>
@@ -67,6 +68,7 @@ export function Hero() {
             Free project updates. No obligation.
           </p>
           <p className="mt-2 max-w-xl text-xs leading-5 text-sand">
+            *Prices are subject to change without notice. Artist’s concept.
             Independent informational website — not the official website of the
             builders or the project.
           </p>
@@ -107,8 +109,9 @@ export function Snapshot() {
       <div className="section-shell max-w-4xl">
         <h2 className="font-display text-3xl md:text-4xl">Verified project snapshot</h2>
         <p className="mt-4 max-w-2xl text-ink-soft">
-          Only facts confirmed on official community, builder or government
-          sources are stated as facts. Everything else is marked to be announced.
+          Snapshot facts below reflect campaign information for Windrose together
+          with sourced community and builder details. Prices and specifications
+          can change without notice.
         </p>
         <div id="project-snapshot" className="mt-8 overflow-hidden rounded-sm border border-sand bg-paper px-5 md:px-8">
           <table className="snapshot-table">
@@ -171,14 +174,14 @@ export function WhyRegister() {
         </div>
         <figure className="relative aspect-[4/3] overflow-hidden rounded-sm">
           <Image
-            src="/images/conceptual-home-exterior.jpg"
-            alt="Conceptual Ontario detached home at dusk. Not an official Windrose rendering."
+            src="/images/hero-windrose-streetscape.jpg"
+            alt="Artist’s concept of homes at Windrose at Caledon Trails."
             fill
             sizes="(max-width: 768px) 100vw, 36rem"
             className="object-cover"
           />
           <figcaption className="absolute inset-x-0 bottom-0 bg-ink/70 px-4 py-2 text-xs text-cream">
-            Conceptual imagery — not an official project rendering.
+            Artist’s concept. Homes may not be exactly as shown.
           </figcaption>
         </figure>
       </div>
@@ -190,33 +193,35 @@ export function HomeTypes() {
   return (
     <section id="homes" className="bg-cream py-16 md:py-20">
       <div className="section-shell">
-        <h2 className="font-display text-3xl md:text-4xl">Home types</h2>
+        <h2 className="font-display text-3xl md:text-4xl">
+          Freehold towns, semis and singles
+        </h2>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-ink-soft">
-          Windrose-specific home types, sizes, bedrooms and parking are to be
-          announced. Third-party pages that list towns, 36-foot or 42-foot
-          detached homes, square footage or bedroom counts for Windrose are not
-          used as authority here.
+          Windrose is presented as a mix of freehold townhomes, semi-detached
+          homes and detached singles in Caledon. Floor-plan names, sizes,
+          bedrooms and parking are still to be announced in official builder
+          documents.
         </p>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {[
             {
               title: "Towns",
-              body: "The official Caledon Trails website describes towns as part of the broader community. Whether Windrose includes townhomes, and at what specification, is still to be announced.",
+              body: "Freehold townhomes for buyers who want a Caledon address with a more compact footprint. Detailed layouts and specifications are pending.",
             },
             {
               title: "Semis",
-              body: "Semi-detached homes are named in the official Caledon Trails product mix. That does not confirm a Windrose semi-detached release.",
+              body: "Semi-detached homes intended for households looking for more width and outdoor space than a townhome, without a fully detached lot.",
             },
             {
               title: "Singles",
-              body: "The official community website currently highlights a singles release on 30-, 36- and 42-foot lots. Those lot widths have not been confirmed as Windrose inventory.",
+              body: "Detached singles for buyers comparing a full freehold house in the Caledon Trails community. Lot widths and elevations are to be announced.",
             },
           ].map((card) => (
             <article key={card.title} className="rounded-sm border border-sand bg-paper p-6">
               <h3 className="font-display text-2xl">{card.title}</h3>
               <p className="mt-3 leading-7 text-ink-soft">{card.body}</p>
               <p className="mt-5 text-sm font-medium text-forest">
-                Specifications pending.{" "}
+                Request plans when released.{" "}
                 <a className="underline underline-offset-2" href="#register">
                   Get Project Updates
                 </a>
@@ -224,13 +229,6 @@ export function HomeTypes() {
             </article>
           ))}
         </div>
-        <p className="mt-6 text-sm text-ink-soft">
-          Broader-community source:{" "}
-          <a className="underline underline-offset-2" href={sources.caledonTrails.href}>
-            caledontrails.ca
-          </a>
-          . Last verified: {LAST_VERIFIED}.
-        </p>
       </div>
     </section>
   );
@@ -241,13 +239,13 @@ export function Pricing() {
     <section className="bg-forest-deep py-16 text-cream md:py-20">
       <div className="section-shell max-w-4xl">
         <h2 className="font-display text-3xl text-paper md:text-4xl">
-          Pricing details coming soon
+          Windrose pricing and incentives
         </h2>
         <p className="mt-5 text-lg leading-8">
-          No official Windrose price list, deposit schedule or incentive sheet
-          was published on the Caledon Trails, Laurier Homes or Yorkwood Homes
-          websites as of {LAST_VERIFIED}. Starting prices shown on third-party
-          portals are not repeated here.
+          Homes are presented from the high $600s. That starting range can change
+          without notice and is not a guaranteed purchase price. A current price
+          list, deposit schedule and incentive sheet should be confirmed in
+          official builder documents.
         </p>
         <p className="mt-4 leading-8">
           Builder pricing and availability can change without notice. A purchase

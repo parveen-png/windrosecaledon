@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { CTA_LABEL, nav } from "@/lib/site";
 import { track } from "@/components/Analytics";
+import { SiteLogo } from "@/components/SiteLogo";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -17,10 +18,10 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-sand/80 bg-cream/95 backdrop-blur">
-      <div className="section-shell flex min-h-16 items-center justify-between gap-4">
-        <a href="#top" className="font-display text-lg tracking-tight text-ink md:text-xl">
-          Windrose at Caledon Trails
+    <header className="sticky top-0 z-50 border-b border-sand bg-white">
+      <div className="section-shell flex min-h-[5.25rem] items-center justify-between gap-4 py-2">
+        <a href="#top" className="flex shrink-0 items-center" aria-label="Windrose at Caledon Trails">
+          <SiteLogo />
         </a>
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Page">
           {nav.map((item) => (
@@ -60,7 +61,7 @@ export function Header() {
       {open ? (
         <nav
           id="mobile-nav"
-          className="border-t border-sand bg-cream px-5 py-4 lg:hidden"
+          className="border-t border-sand bg-white px-5 py-4 lg:hidden"
           aria-label="Mobile"
         >
           <div className="flex flex-col gap-3">

@@ -55,12 +55,12 @@ export function jsonLdGraph() {
         primaryImageOfPage: {
           "@type": "ImageObject",
           "@id": `${SITE_URL}/#hero-image`,
-          url: `${SITE_URL}/images/hero-caledon-landscape.jpg`,
-          contentUrl: `${SITE_URL}/images/hero-caledon-landscape.jpg`,
+          url: `${SITE_URL}/images/hero-windrose-streetscape.jpg`,
+          contentUrl: `${SITE_URL}/images/hero-windrose-streetscape.jpg`,
           caption:
-            "Conceptual Caledon countryside photograph. Not an official project rendering.",
-          width: 1536,
-          height: 1024,
+            "Artist’s concept of homes at Windrose at Caledon Trails. Homes may not be exactly as shown.",
+          width: 1671,
+          height: 1119,
         },
         speakable: {
           "@type": "SpeakableSpecification",
@@ -120,9 +120,9 @@ export function jsonLdGraph() {
       {
         "@type": "ImageObject",
         "@id": `${SITE_URL}/#conceptual-home`,
-        url: `${SITE_URL}/images/conceptual-home-exterior.jpg`,
+        url: `${SITE_URL}/images/hero-windrose-streetscape.jpg`,
         caption:
-          "Conceptual Ontario residential imagery. Not an official Windrose or Caledon Trails rendering.",
+          "Artist’s concept of homes at Windrose at Caledon Trails. Homes may not be exactly as shown.",
         creditText: disclaimer,
       },
     ],

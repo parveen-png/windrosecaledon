@@ -239,9 +239,8 @@ export function RegisterForm({ id = "register-form" }: { id?: string }) {
           Interested in
         </label>
         <p className="mt-1 text-sm text-ink-soft">
-          Tell us which home type you want updates about. Windrose’s confirmed
-          mix is still to be announced; these choices match the broader Caledon
-          Trails community.
+          Tell us which home type you want updates about: townhome, semi-detached
+          or detached single.
         </p>
         <select
           id={`${id}-interest`}

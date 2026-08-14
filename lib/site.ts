@@ -1,5 +1,5 @@
 export const SITE_URL = "https://windrosecaledontrails.ca";
-export const PAGE_VERSION = "2026-08-14.1";
+export const PAGE_VERSION = "2026-08-14.2";
 export const FORM_VERSION = "1.0.0";
 export const CONSENT_TEXT_VERSION = "1.0.0";
 export const LAST_VERIFIED = "14 August 2026";
@@ -94,13 +94,15 @@ export const snapshotRows = [
   },
   {
     field: "Home types",
-    value:
-      "To be announced for Windrose. The broader Caledon Trails community is officially described as towns, semis and singles.",
+    value: "Freehold towns, semis and singles",
   },
-  { field: "Ownership", value: "To be announced" },
+  { field: "Ownership", value: "Freehold" },
   { field: "Size range", value: "To be announced" },
   { field: "Bedrooms", value: "To be announced" },
-  { field: "Starting price", value: "To be announced" },
+  {
+    field: "Starting price",
+    value: "From the high $600s*. Prices are subject to change without notice.",
+  },
   { field: "Deposit structure", value: "To be announced" },
   {
     field: "Sales / launch status",
@@ -113,7 +115,7 @@ export const faqs = [
   {
     question: "What is Windrose at Caledon Trails?",
     answer:
-      "Windrose at Caledon Trails is a new-home project name associated with the Caledon Trails community in Caledon, Ontario. This independent page collects registrations for verified project updates. The official Caledon Trails website does not currently use the Windrose name, so product details specific to Windrose remain to be announced.",
+      "Windrose at Caledon Trails is presented as a collection of freehold towns, semis and singles in the Caledon Trails community at Mayfield Drive and McLaughlin Road in Caledon. This independent page collects registrations for verified project updates. Floor plans, deposits and occupancy should still be confirmed in official builder documents.",
   },
   {
     question: "Where is Windrose at Caledon Trails located?",
@@ -128,12 +130,12 @@ export const faqs = [
   {
     question: "What home types will Windrose offer?",
     answer:
-      "Windrose home types are to be announced. Do not rely on third-party portals for the product mix. The official Caledon Trails website describes the broader community as towns, semis and singles, including a current singles release on 30-, 36- and 42-foot lots. That description has not been confirmed as the Windrose offering.",
+      "Windrose is presented as freehold towns, semis and singles. Detailed floor plans, sizes, bedrooms and parking remain to be confirmed in official builder documents. Register for updates when those specifications are released.",
   },
   {
     question: "What is the starting price for Windrose?",
     answer:
-      "A verified starting price is to be announced. No official price list for Windrose was available on the Caledon Trails, Laurier Homes or Yorkwood Homes websites as of 14 August 2026. Figures published on third-party listing sites should not be treated as current builder pricing.",
+      "Homes are presented from the high $600s. That figure can change without notice and is not a guaranteed purchase price. Confirm current pricing in official builder documents. A purchase may be made only through an Agreement of Purchase and Sale.",
   },
   {
     question: "What is the deposit structure?",
@@ -163,14 +165,15 @@ export const faqs = [
 ] as const;
 
 export const introAnswer =
-  "Windrose at Caledon Trails is a new-home opportunity associated with the Caledon Trails community in Caledon, Ontario. The official community website places Caledon Trails at Mayfield Drive and McLaughlin Road and names Laurier Homes and Yorkwood Homes as builders of towns, semis and singles. Windrose-specific prices, floor plans, home types and occupancy have not been confirmed on that site as of 14 August 2026.";
+  "Windrose at Caledon Trails is a collection of freehold towns, semis and singles in the Caledon Trails community at Mayfield Drive and McLaughlin Road, Caledon. Laurier Homes and Yorkwood Homes are the community builders named on the official Caledon Trails website. Homes are presented from the high $600s, with prices subject to change. Floor plans, deposits and occupancy should be confirmed in official builder documents.";
 
 export const disclaimer =
   "This is an independent informational website and is not the official website of the builders or the project. Project details, prices, incentives, specifications and availability are subject to change without notice. Renderings are artists' concepts. This is not an offering for sale. Any offering may be made only through the builders' official documents and Agreement of Purchase and Sale. E.&O.E.";
 
 export const metadataContent = {
   title:
-    "Windrose at Caledon Trails | New Homes in Caledon — Prices & Floor Plans Updates",
+    "Windrose at Caledon Trails | Freehold Towns, Semis & Singles from the High $600s",
   description:
-    "Independent information for Windrose at Caledon Trails at Mayfield Drive and McLaughlin Road, Caledon. Register for verified pricing, floor-plan and launch updates from Laurier Homes and Yorkwood Homes’ Caledon Trails community.",
+    "Freehold towns, semis and singles at Windrose at Caledon Trails, Mayfield Drive and McLaughlin Road, Caledon. Starting from the high $600s. Register for pricing, floor-plan and launch updates.",
 };
+
