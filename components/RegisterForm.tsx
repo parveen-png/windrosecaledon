@@ -147,7 +147,7 @@ export function RegisterForm({ id = "register-form" }: { id?: string }) {
         className="p-2"
         role="status"
       >
-        <p className="font-display text-3xl font-light text-ink">Registration received</p>
+        <p className="font-display text-2xl font-light text-ink md:text-3xl">Registration received</p>
         <p className="mt-4 text-lg leading-relaxed text-ink-soft">
           Thank you—your registration has been received. We’ll send verified
           Windrose at Caledon Trails updates as project information becomes
@@ -164,13 +164,13 @@ export function RegisterForm({ id = "register-form" }: { id?: string }) {
       onSubmit={onSubmit}
       onFocus={markStart}
       aria-labelledby={headingId}
-      className=""
+      className="relative min-w-0"
     >
-      <p id={headingId} className="font-display text-3xl font-light text-ink">
+      <p id={headingId} className="font-display text-2xl font-light text-ink md:text-3xl">
         Get Project Updates
       </p>
 
-      <div className="mt-8 grid gap-6 sm:grid-cols-2">
+      <div className="mt-5 grid gap-5 sm:grid-cols-2 md:mt-8 md:gap-6">
         <Field
           idPrefix={id}
           label="First name"
@@ -243,7 +243,7 @@ export function RegisterForm({ id = "register-form" }: { id?: string }) {
         ) : null}
       </fieldset>
 
-      <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
+      <div className="sr-only" aria-hidden="true">
         <label htmlFor={`${id}-company`}>Company website</label>
         <input
           id={`${id}-company`}
@@ -292,7 +292,7 @@ export function RegisterForm({ id = "register-form" }: { id?: string }) {
       <button
         type="submit"
         disabled={status.type === "submitting"}
-        className="mt-8 inline-flex min-h-14 w-full items-center justify-center bg-forest px-6 text-sm font-medium tracking-widest uppercase text-paper transition-colors hover:bg-forest-deep disabled:cursor-wait disabled:opacity-70"
+        className="mt-6 inline-flex min-h-12 w-full items-center justify-center bg-forest px-6 text-sm font-medium tracking-[0.14em] uppercase text-paper transition-colors hover:bg-forest-deep disabled:cursor-wait disabled:opacity-70 md:mt-8 md:min-h-14"
       >
         {status.type === "submitting" ? "Sending…" : "Get Project Updates"}
       </button>
@@ -340,7 +340,7 @@ function Field({
         value={value}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${fieldId}-error` : undefined}
-        className="mt-2 min-h-12 w-full border-b border-sand bg-transparent px-0 text-base text-ink focus:border-forest focus:outline-none transition-colors"
+        className="mt-2 min-h-12 w-full max-w-full border-b border-sand bg-transparent px-0 text-base text-ink transition-colors focus:border-forest focus:outline-none"
         onChange={(event) => onChange(event.target.value)}
       />
       {error ? (

@@ -89,7 +89,7 @@ export function ConsentBanner() {
     <div
       role="dialog"
       aria-label="Cookie and analytics consent"
-      className="fixed inset-x-0 bottom-20 z-40 mx-auto w-[min(40rem,calc(100%-1.5rem))] rounded-sm border border-sand bg-paper p-4 shadow-[0_10px_40px_rgba(28,26,22,0.16)] md:bottom-6"
+      className="fixed inset-x-0 bottom-[5.5rem] z-40 mx-3 w-auto max-w-none rounded-sm border border-sand bg-paper p-4 shadow-[0_10px_40px_rgba(28,26,22,0.16)] sm:mx-auto sm:w-[min(40rem,calc(100%-1.5rem))] md:bottom-6"
     >
       <p className="text-sm leading-6 text-ink">
         We use optional analytics only after you agree. Registration data is never

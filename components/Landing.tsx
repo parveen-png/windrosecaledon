@@ -12,7 +12,7 @@ import {
 export function Hero() {
   return (
     <section
-      className="relative isolate flex min-h-[36rem] items-center overflow-hidden md:min-h-[42rem] lg:min-h-[min(48rem,calc(100dvh-5.5rem))]"
+      className="relative isolate flex items-center overflow-hidden md:min-h-[42rem] lg:min-h-[min(48rem,calc(100dvh-5.5rem))]"
       aria-labelledby="hero-heading"
     >
       <div className="absolute inset-0 -z-10">
@@ -24,33 +24,33 @@ export function Hero() {
           sizes="100vw"
           className="object-cover object-[center_bottom]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,16,24,0.72)_0%,rgba(10,16,24,0.42)_48%,rgba(10,16,24,0.18)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,16,24,0.62)_0%,rgba(10,16,24,0.78)_100%)] md:bg-[linear-gradient(90deg,rgba(10,16,24,0.72)_0%,rgba(10,16,24,0.42)_48%,rgba(10,16,24,0.18)_100%)]" />
       </div>
-      <div className="section-shell grid w-full items-center gap-10 py-16 md:grid-cols-[minmax(0,1fr)_minmax(22rem,26rem)] md:py-20 lg:gap-16">
-        <div className="text-paper">
-          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-sand">
+      <div className="section-shell grid w-full min-w-0 items-center gap-8 py-10 pb-24 md:grid-cols-[minmax(0,1fr)_minmax(22rem,26rem)] md:gap-10 md:py-20 lg:gap-16">
+        <div className="min-w-0 text-paper">
+          <p className="text-[0.7rem] font-semibold tracking-[0.14em] uppercase text-sand sm:text-xs sm:tracking-[0.25em]">
             Freehold Towns, Semis &amp; Singles
           </p>
           <h1
             id="hero-heading"
-            className="mt-4 font-display text-5xl font-light leading-[1.1] md:text-[4rem]"
+            className="mt-3 text-balance font-display text-4xl font-light leading-[1.12] sm:text-5xl md:mt-4 md:text-[4rem]"
           >
             Windrose at Caledon Trails
           </h1>
-          <p className="mt-6 font-display text-2xl font-light tracking-tight text-cream md:text-3xl">
+          <p className="mt-4 font-display text-xl font-light tracking-tight text-cream sm:text-2xl md:mt-6 md:text-3xl">
             Starting from the high $600s*
           </p>
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-cream md:text-xl">
+          <p className="mt-4 max-w-lg text-base leading-relaxed text-cream md:mt-6 md:text-xl">
             New freehold homes at Mayfield Drive and McLaughlin Road, Caledon.
           </p>
-          <p className="mt-8 max-w-lg text-xs leading-relaxed text-sand/80">
+          <p className="mt-5 max-w-lg text-xs leading-relaxed text-sand/80 md:mt-8">
             *Prices are subject to change without notice. Artist’s concept.
             Independent informational website — not the official website of the
             builders or the project.
           </p>
         </div>
-        <div id="register" className="scroll-mt-32">
-          <div className="bg-white p-6 shadow-2xl shadow-black/10 md:p-10">
+        <div id="register" className="min-w-0 scroll-mt-24 md:scroll-mt-32">
+          <div className="bg-white p-5 shadow-2xl shadow-black/10 sm:p-6 md:p-10">
             <RegisterForm id="hero-register-form" />
           </div>
         </div>
@@ -61,12 +61,12 @@ export function Hero() {
 
 export function DirectAnswer() {
   return (
-    <section id="overview" className="bg-paper py-24 md:py-32">
+    <section id="overview" className="bg-paper py-16 md:py-32">
       <div className="section-shell max-w-4xl text-center">
-        <h2 className="font-display text-4xl font-light md:text-5xl">
+        <h2 className="text-balance font-display text-3xl font-light md:text-5xl">
           What is Windrose at Caledon Trails?
         </h2>
-        <p id="direct-answer" className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-ink-soft md:text-2xl">
+        <p id="direct-answer" className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-ink-soft md:mt-8 md:text-2xl">
           {introAnswer}
         </p>
         <p className="mt-8 text-sm tracking-wide text-ink-soft">
@@ -83,15 +83,15 @@ export function DirectAnswer() {
 
 export function Snapshot() {
   return (
-    <section className="bg-cream py-24 md:py-32">
+    <section className="bg-cream py-16 md:py-32">
       <div className="section-shell max-w-4xl">
-        <h2 className="font-display text-4xl font-light md:text-5xl">Verified project snapshot</h2>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
+        <h2 className="text-balance font-display text-3xl font-light md:text-5xl">Verified project snapshot</h2>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:mt-6 md:text-lg">
           Snapshot facts below reflect campaign information for Windrose together
           with sourced community and builder details. Prices and specifications
           can change without notice.
         </p>
-        <div id="project-snapshot" className="mt-12 overflow-hidden bg-white px-6 py-8 shadow-2xl shadow-ink/5 md:px-12 md:py-10">
+        <div id="project-snapshot" className="mt-8 overflow-hidden bg-white px-4 py-6 shadow-2xl shadow-ink/5 sm:px-6 sm:py-8 md:mt-12 md:px-12 md:py-10">
           <table className="snapshot-table">
             <caption className="sr-only">
               Windrose at Caledon Trails verified project facts as of {LAST_VERIFIED}
@@ -126,13 +126,13 @@ export function WhyRegister() {
     "Builder incentive or change notices, if published",
   ];
   return (
-    <section className="bg-paper py-24 md:py-32">
-      <div className="section-shell grid gap-16 md:grid-cols-2 lg:gap-20 md:items-center">
-        <div>
-          <h2 className="font-display text-4xl font-light md:text-5xl">
+    <section className="bg-paper py-16 md:py-32">
+      <div className="section-shell grid gap-10 md:grid-cols-2 md:items-center md:gap-16 lg:gap-20">
+        <div className="min-w-0">
+          <h2 className="text-balance font-display text-3xl font-light md:text-5xl">
             Why register on this page
           </h2>
-          <p className="mt-8 text-lg leading-relaxed text-ink-soft">
+          <p className="mt-5 text-base leading-relaxed text-ink-soft md:mt-8 md:text-lg">
             Official Windrose documents are not available to send today. The
             form is for useful updates, not a wall in front of the page. You
             keep reading everything below whether or not you register.
@@ -158,7 +158,7 @@ export function WhyRegister() {
             sizes="(max-width: 768px) 100vw, 36rem"
             className="object-cover"
           />
-          <figcaption className="absolute inset-x-0 bottom-0 bg-ink/80 px-6 py-3 text-xs tracking-wide text-cream backdrop-blur-sm">
+          <figcaption className="absolute inset-x-0 bottom-0 bg-ink/80 px-4 py-3 text-xs tracking-wide text-cream backdrop-blur-sm md:px-6">
             Artist’s concept. Homes may not be exactly as shown.
           </figcaption>
         </figure>
@@ -169,18 +169,18 @@ export function WhyRegister() {
 
 export function HomeTypes() {
   return (
-    <section id="homes" className="bg-cream py-24 md:py-32">
+    <section id="homes" className="bg-cream py-16 md:py-32">
       <div className="section-shell">
-        <h2 className="text-center font-display text-4xl font-light md:text-5xl">
+        <h2 className="text-balance text-center font-display text-3xl font-light md:text-5xl">
           Freehold towns, semis and singles
         </h2>
-        <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-relaxed text-ink-soft">
+        <p className="mx-auto mt-5 max-w-3xl text-center text-base leading-relaxed text-ink-soft md:mt-6 md:text-lg">
           Windrose is presented as a mix of freehold townhomes, semi-detached
           homes and detached singles in Caledon. Floor-plan names, sizes,
           bedrooms and parking are still to be announced in official builder
           documents.
         </p>
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:mt-16 md:grid-cols-3 md:gap-8">
           {[
             {
               title: "Towns",
@@ -195,12 +195,12 @@ export function HomeTypes() {
               body: "Detached singles for buyers comparing a full freehold house in the Caledon Trails community. Lot widths and elevations are to be announced.",
             },
           ].map((card) => (
-            <article key={card.title} className="bg-white p-8 shadow-xl shadow-ink/5 md:p-10">
-              <h3 className="font-display text-3xl font-light">{card.title}</h3>
+            <article key={card.title} className="bg-white p-6 shadow-xl shadow-ink/5 md:p-10">
+              <h3 className="font-display text-2xl font-light md:text-3xl">{card.title}</h3>
               <p className="mt-4 leading-relaxed text-ink-soft">{card.body}</p>
               <p className="mt-8 text-sm font-medium tracking-wide text-forest">
                 Request plans when released.{" "}
-                <a className="underline underline-offset-4 hover:text-forest-deep" href="#register">
+                <a className="underline underline-offset-4 hover:text-forest-deep" href="/#register">
                   Get Project Updates
                 </a>
               </p>
@@ -214,12 +214,12 @@ export function HomeTypes() {
 
 export function Pricing() {
   return (
-    <section className="bg-forest-deep py-24 text-cream md:py-32">
+    <section className="bg-forest-deep py-16 text-cream md:py-32">
       <div className="section-shell max-w-4xl text-center">
-        <h2 className="font-display text-4xl font-light text-paper md:text-5xl">
+        <h2 className="text-balance font-display text-3xl font-light text-paper md:text-5xl">
           Windrose pricing and incentives
         </h2>
-        <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed md:text-2xl">
+        <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed md:mt-8 md:text-2xl">
           Homes are presented from the high $600s. That starting range can change
           without notice and is not a guaranteed purchase price. A current price
           list, deposit schedule and incentive sheet should be confirmed in
@@ -231,8 +231,8 @@ export function Pricing() {
           Agreement of Purchase and Sale.
         </p>
         <a
-          href="#register"
-          className="mt-12 inline-flex min-h-14 items-center justify-center bg-paper px-10 text-sm font-medium tracking-widest uppercase text-forest transition-colors hover:bg-cream"
+          href="/#register"
+          className="mt-8 inline-flex min-h-12 w-full max-w-full items-center justify-center bg-paper px-6 text-center text-sm font-medium tracking-[0.14em] uppercase text-forest transition-colors hover:bg-cream sm:mt-12 sm:w-auto sm:min-h-14 sm:px-10"
         >
           Get Project Updates
         </a>
@@ -245,13 +245,13 @@ export function Location() {
   const mapSrc =
     "https://www.openstreetmap.org/export/embed.html?bbox=-79.90%2C43.73%2C-79.82%2C43.79&layer=mapnik&marker=43.761%2C-79.860";
   return (
-    <section id="location" className="bg-paper py-24 md:py-32">
-      <div className="section-shell grid gap-16 lg:grid-cols-2 lg:gap-20">
-        <div>
-          <h2 className="font-display text-4xl font-light md:text-5xl">
+    <section id="location" className="bg-paper py-16 md:py-32">
+      <div className="section-shell grid gap-10 lg:grid-cols-2 lg:gap-20">
+        <div className="min-w-0">
+          <h2 className="text-balance font-display text-3xl font-light md:text-5xl">
             Location and lifestyle
           </h2>
-          <div className="prose-calm mt-8 space-y-6 text-lg leading-relaxed">
+          <div className="prose-calm mt-6 space-y-5 text-base leading-relaxed md:mt-8 md:space-y-6 md:text-lg">
             <p>
               Caledon Trails is presented at the intersection of Mayfield Drive
               and McLaughlin Road in the Town of Caledon. Mayfield Road is the
@@ -313,7 +313,7 @@ export function Location() {
               sizes="(max-width: 1024px) 100vw, 36rem"
               className="object-cover"
             />
-            <figcaption className="absolute inset-x-0 bottom-0 bg-ink/80 px-6 py-3 text-xs tracking-wide text-cream backdrop-blur-sm">
+            <figcaption className="absolute inset-x-0 bottom-0 bg-ink/80 px-4 py-3 text-xs tracking-wide text-cream backdrop-blur-sm md:px-6">
               Conceptual landscape imagery — not the project site.
             </figcaption>
           </figure>
@@ -321,11 +321,11 @@ export function Location() {
             <iframe
               title="Map of Mayfield Drive and McLaughlin Road, Caledon"
               src={mapSrc}
-              className="h-[20rem] w-full border-0"
+              className="h-64 w-full max-w-full border-0 md:h-[20rem]"
               loading="lazy"
               referrerPolicy="no-referrer"
             />
-            <p className="bg-cream px-6 py-4 text-sm tracking-wide text-ink-soft">
+            <p className="bg-cream px-4 py-4 text-sm tracking-wide text-ink-soft md:px-6">
               Approximate community intersection.{" "}
               <a
                 className="text-forest underline underline-offset-4 hover:text-forest-deep"
@@ -346,7 +346,7 @@ export function Builders() {
   return (
     <section id="builders" className="bg-cream py-16 md:py-20">
       <div className="section-shell">
-        <h2 className="font-display text-3xl md:text-4xl">The builders</h2>
+        <h2 className="text-balance font-display text-3xl md:text-4xl">The builders</h2>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-ink-soft">
           The official Caledon Trails website identifies a partnership of
           Laurier Homes and Yorkwood Homes. Profiles below use only those
@@ -407,7 +407,7 @@ export function BuyerSupport() {
   return (
     <section className="bg-paper py-16 md:py-20">
       <div className="section-shell max-w-4xl">
-        <h2 className="font-display text-3xl md:text-4xl">
+        <h2 className="text-balance font-display text-3xl md:text-4xl">
           Who may want to evaluate Windrose
         </h2>
         <p className="mt-5 text-lg leading-8 text-ink-soft">
@@ -439,12 +439,12 @@ export function Faq() {
           {faqs.map((item) => (
             <details key={item.question} className="group py-5">
               <summary className="cursor-pointer list-none font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
-                <span className="flex items-start justify-between gap-4">
-                  {item.question}
-                  <span className="text-gold group-open:hidden" aria-hidden>
+                <span className="flex items-start justify-between gap-3 text-left">
+                  <span className="min-w-0">{item.question}</span>
+                  <span className="shrink-0 text-gold group-open:hidden" aria-hidden>
                     +
                   </span>
-                  <span className="hidden text-gold group-open:inline" aria-hidden>
+                  <span className="hidden shrink-0 text-gold group-open:inline" aria-hidden>
                     −
                   </span>
                 </span>
@@ -461,9 +461,9 @@ export function Faq() {
 export function FinalCta() {
   return (
     <section className="bg-paper py-16 md:py-24">
-      <div className="section-shell grid items-start gap-10 md:grid-cols-2">
-        <div>
-          <h2 className="font-display text-3xl md:text-4xl">
+      <div className="section-shell grid min-w-0 items-start gap-8 md:grid-cols-2 md:gap-10">
+        <div className="min-w-0">
+          <h2 className="text-balance font-display text-3xl md:text-4xl">
             Register for verified Windrose updates
           </h2>
           <p className="mt-5 text-lg leading-8 text-ink-soft">
@@ -473,7 +473,9 @@ export function FinalCta() {
           </p>
           <p className="mt-4 text-sm leading-6 text-ink-soft">{disclaimer}</p>
         </div>
-        <RegisterForm id="final-register-form" />
+        <div className="min-w-0 bg-white p-5 shadow-2xl shadow-ink/5 sm:p-6 md:p-10">
+          <RegisterForm id="final-register-form" />
+        </div>
       </div>
     </section>
   );

@@ -15,11 +15,11 @@ export default function PrivacyPolicyPage() {
     <>
       <Header />
       <main id="main" className="bg-paper">
-        <article className="section-shell max-w-3xl py-16 md:py-24">
+        <article className="section-shell max-w-3xl py-12 md:py-24">
           <p className="text-sm font-semibold tracking-[0.16em] uppercase text-gold">
             Legal
           </p>
-          <h1 className="mt-3 font-display text-4xl">Privacy policy</h1>
+          <h1 className="mt-3 font-display text-3xl md:text-4xl">Privacy policy</h1>
           <p className="mt-4 text-sm text-ink-soft">
             Last updated: {LAST_VERIFIED}. This policy applies to {SITE_URL}.
           </p>

@@ -31,7 +31,14 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6.5rem;
+  scroll-padding-top: 5.25rem;
+  overflow-x: clip;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 6.5rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -52,6 +59,15 @@ body {
   background: var(--cream);
   color: var(--ink);
   font-family: var(--font-source-sans), "Source Sans 3", system-ui, sans-serif;
+  overflow-x: clip;
+}
+
+a,
+button,
+summary,
+input,
+label {
+  touch-action: manipulation;
 }
 
 :focus-visible {
@@ -86,7 +102,7 @@ body {
 }
 
 .section-shell {
-  width: min(72rem, calc(100% - 2.5rem));
+  width: min(72rem, calc(100% - 2rem));
   margin-inline: auto;
 }
 
@@ -143,5 +159,6 @@ body {
 
   .snapshot-table td {
     margin-top: 0.3rem;
+    overflow-wrap: anywhere;
   }
 }

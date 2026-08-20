@@ -3,8 +3,8 @@ import { disclaimer } from "@/lib/site";
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-ink pb-24 text-cream md:pb-10">
-      <div className="section-shell grid gap-12 py-16 md:grid-cols-2 lg:py-20">
+    <footer className="bg-ink pb-[max(6.5rem,calc(5.5rem+env(safe-area-inset-bottom)))] text-cream md:pb-10">
+      <div className="section-shell grid gap-10 py-12 md:grid-cols-2 md:gap-12 md:py-16 lg:py-20">
         <div>
           <p className="font-display text-3xl font-light text-paper">
             Windrose at Caledon Trails
@@ -30,12 +30,12 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a className="transition-colors hover:text-white" href="#faq">
+              <a className="transition-colors hover:text-white" href="/#faq">
                 FAQ
               </a>
             </li>
             <li>
-              <a className="transition-colors hover:text-white" href="#register">
+              <a className="transition-colors hover:text-white" href="/#register">
                 Register
               </a>
             </li>
