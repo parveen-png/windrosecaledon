@@ -6,16 +6,51 @@ import { fieldErrorsFromZod, leadSchema } from "@/lib/validation";
 
 export const runtime = "nodejs";
 
+function hostFromUrl(value: string) {
+  try {
+    const url = new URL(value.includes("://") ? value : `https://${value}`);
+    return url.host;
+  } catch {
+    return "";
+  }
+}
+
 function originAllowed(request: Request) {
   const origin = request.headers.get("origin");
   if (!origin) return true;
-  const allowed = [
+
+  const originHost = hostFromUrl(origin);
+  if (!originHost) return false;
+
+  const requestHost =
+    request.headers.get("x-forwarded-host")?.split(",")[0]?.trim() ||
+    request.headers.get("host") ||
+    "";
+
+  if (requestHost && originHost === requestHost) return true;
+
+  const allowedHosts = new Set<string>();
+  for (const value of [
     SITE_URL,
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.VERCEL_URL,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL,
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    process.env.NEXT_PUBLIC_SITE_URL,
-  ].filter(Boolean) as string[];
-  return allowed.some((item) => origin === item);
+  ]) {
+    if (!value) continue;
+    const host = hostFromUrl(value);
+    if (!host) continue;
+    allowedHosts.add(host);
+    if (host.startsWith("www.")) allowedHosts.add(host.slice(4));
+    else allowedHosts.add(`www.${host}`);
+  }
+
+  if (originHost.endsWith(".vercel.app") && originHost.includes("windrose")) {
+    return true;
+  }
+
+  return allowedHosts.has(originHost);
 }
 
 export async function POST(request: Request) {
