@@ -211,7 +211,7 @@ export function acknowledgementCopy(lead: StoredLead) {
     "If you no longer wish to receive these messages, reply with “unsubscribe” or use the unsubscribe link in future emails.",
     "",
     "Windrose at Caledon Trails",
-    "https://windrosecaledontrails.ca/",
+    "https://www.windrosecaledontrails.ca/",
   ].join("\n");
 }
 
@@ -225,7 +225,7 @@ export function internalCopy(lead: StoredLead) {
     `Broker: ${lead.isBroker}`,
     `Consent: yes (${lead.consentTextVersion}) at ${lead.submittedAt}`,
     `Timezone: ${lead.timezone || "Unknown"}`,
-    `Page: ${lead.pageUrl || "https://windrosecaledontrails.ca/"}`,
+    `Page: ${lead.pageUrl || "https://www.windrosecaledontrails.ca/"}`,
     `Referrer: ${lead.referrer || "Direct"}`,
     `UTM: ${lead.utmSource || "-"} / ${lead.utmMedium || "-"} / ${lead.utmCampaign || "-"}`,
     `Click IDs: gclid=${lead.gclid || "-"} fbclid=${lead.fbclid || "-"}`,

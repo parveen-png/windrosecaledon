@@ -1,4 +1,4 @@
-export const SITE_URL = "https://windrosecaledontrails.ca";
+export const SITE_URL = "https://www.windrosecaledontrails.ca";
 export const PAGE_VERSION = "2026-08-14.3";
 export const FORM_VERSION = "1.1.0";
 export const CONSENT_TEXT_VERSION = "1.0.0";

@@ -7,4 +7,4 @@
 - This website is independent and is not the official builder site
 
 Primary source: https://caledontrails.ca/
-Canonical: https://windrosecaledontrails.ca/
+Canonical: https://www.windrosecaledontrails.ca/

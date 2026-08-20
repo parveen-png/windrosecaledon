@@ -1,6 +1,6 @@
 # Windrose at Caledon Trails
 
-Independent Next.js landing page for **Windrose at Caledon Trails** at `https://windrosecaledontrails.ca/`.
+Independent Next.js landing page for **Windrose at Caledon Trails** at `https://www.windrosecaledontrails.ca/`.
 
 This is not the official builder website. Official Caledon Trails facts come from [caledontrails.ca](https://caledontrails.ca/). Windrose-specific prices, floor plans, deposits, incentives, launch dates and occupancy are marked **to be announced** until official documents exist.
 
