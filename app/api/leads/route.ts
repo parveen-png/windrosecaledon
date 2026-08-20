@@ -78,7 +78,17 @@ export async function POST(request: Request) {
 
   try {
     const lead = toStoredLead(parsed.data, key);
-    await deliverLead(lead);
+    const result = await deliverLead(lead);
+    if (process.env.GOOGLE_SHEETS_SPREADSHEET_ID && !result.routed) {
+      return NextResponse.json(
+        {
+          ok: false,
+          message:
+            "Your registration could not be saved. Please try again or email the site publisher.",
+        },
+        { status: 502 },
+      );
+    }
     return NextResponse.json({ ok: true, id: lead.id });
   } catch {
     return NextResponse.json(

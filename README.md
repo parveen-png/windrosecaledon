@@ -22,7 +22,7 @@ Do not advertise this site until these are replaced with real values in `.env.lo
 - `NEXT_PUBLIC_REGISTRANT_NAME` (if an Ontario registrant is advertising)
 - `NEXT_PUBLIC_PUBLIC_PHONE` and/or `NEXT_PUBLIC_PUBLIC_EMAIL`
 - `NEXT_PUBLIC_BUSINESS_ADDRESS`
-- A lead destination: `LEAD_WEBHOOK_URL` and/or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL`
+- A lead destination: Google Sheets (`GOOGLE_SHEETS_SPREADSHEET_ID` + OAuth vars), and/or `LEAD_WEBHOOK_URL`, and/or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL`
 
 Have compliance and Canadian legal/privacy counsel review copy, consent language and the independent-site disclaimer before launch.
 
@@ -30,9 +30,10 @@ Have compliance and Canadian legal/privacy counsel review copy, consent language
 
 Registrations POST to `/api/leads`. Valid leads are:
 
-1. Appended to `data/leads.jsonl`
-2. Posted to `LEAD_WEBHOOK_URL` when set
-3. Emailed via Resend when `RESEND_API_KEY` is set
+1. Appended to `data/leads.jsonl` when the filesystem is writable
+2. Appended to the Google Sheet when `GOOGLE_SHEETS_SPREADSHEET_ID` and OAuth env vars are set
+3. Posted to `LEAD_WEBHOOK_URL` when set
+4. Emailed via Resend when `RESEND_API_KEY` is set
 
 The visitor is told the registration was received only after the server saves the lead. Analytics `generate_lead` fires only after that success response. Personal information is never sent to analytics.
 

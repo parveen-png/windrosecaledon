@@ -8,6 +8,7 @@ import {
   consentText,
 } from "@/lib/site";
 import type { LeadInput } from "@/lib/validation";
+import { appendWindroseLeadToGoogleSheet } from "@/lib/google/sheets";
 
 export type StoredLead = {
   id: string;
@@ -88,10 +89,24 @@ export async function deliverLead(lead: StoredLead): Promise<{
   routed: boolean;
   routingError?: string;
 }> {
-  await persistLead(lead);
+  try {
+    await persistLead(lead);
+  } catch (error) {
+    console.warn("Local lead persist failed", error);
+  }
 
   const webhook = process.env.LEAD_WEBHOOK_URL;
   const errors: string[] = [];
+  let sheetsOk = false;
+
+  if (process.env.GOOGLE_SHEETS_SPREADSHEET_ID) {
+    const sheetsResult = await appendWindroseLeadToGoogleSheet(lead);
+    if (!sheetsResult.ok) {
+      errors.push(sheetsResult.error);
+    } else {
+      sheetsOk = true;
+    }
+  }
 
   if (webhook) {
     try {
@@ -117,16 +132,24 @@ export async function deliverLead(lead: StoredLead): Promise<{
   if (emailError) errors.push(emailError);
 
   if (errors.length > 0) {
-    await appendFile(
-      path.join(process.cwd(), "data", "lead-failures.jsonl"),
-      `${JSON.stringify({ id: lead.id, at: new Date().toISOString(), errors })}\n`,
-      "utf8",
-    );
+    try {
+      await appendFile(
+        path.join(process.cwd(), "data", "lead-failures.jsonl"),
+        `${JSON.stringify({ id: lead.id, at: new Date().toISOString(), errors })}\n`,
+        "utf8",
+      );
+    } catch (error) {
+      console.warn("Lead failure log write failed", error);
+    }
   }
+
+  const routed =
+    sheetsOk ||
+    (errors.length === 0 && Boolean(webhook || process.env.RESEND_API_KEY));
 
   return {
     captured: true,
-    routed: errors.length === 0 && Boolean(webhook || process.env.RESEND_API_KEY),
+    routed,
     routingError: errors[0],
   };
 }
